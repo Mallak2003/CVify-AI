@@ -1,0 +1,20 @@
+# Optional Render Blueprint. If your service already exists, you can ignore this file and
+# set the same environment variables in the Render dashboard.
+services:
+  - type: web
+    name: cvify-ai
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5-5
+      - key: ALLOWED_ORIGIN
+        value: https://cvify-ai.onrender.com
+      - key: AI_DAILY_LIMIT
+        value: "20"
