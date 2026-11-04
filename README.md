@@ -2,7 +2,7 @@
 
 Structure
 - server.js — Express server: serves /public and mounts the AI API
-- ai/analyze.js — POST /api/analyze (Anthropic API; the key stays on the server)
+- ai/analyze.js — POST /api/analyze (Google Gemini via @google/genai, structured JSON output; the key stays on the server)
 - public/index.html — the whole front end (React, Paddle.js v2, PDF export)
 - public/fonts/ — Japanese / Chinese PDF fonts (loaded only when needed)
 - render.yaml — optional Blueprint (you can ignore it for an existing service)
@@ -11,8 +11,8 @@ Render settings (Dashboard > your service)
 - Build Command: npm install
 - Start Command: npm start
 - Environment variables:
-  - ANTHROPIC_API_KEY (required for AI analysis)
-  - ANTHROPIC_MODEL (optional, default claude-sonnet-5-5)
+  - GEMINI_API_KEY (required for AI analysis; get one free at https://aistudio.google.com/apikey)
+  - GEMINI_MODEL (optional, default gemini-2.5-flash)
   - ALLOWED_ORIGIN (default https://cvify-ai.onrender.com; comma-separate if you add a custom domain)
   - AI_DAILY_LIMIT (optional, requests per IP per day, default 20)
   - NODE_ENV=production

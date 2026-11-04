@@ -10,10 +10,10 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: ANTHROPIC_API_KEY
+      - key: GEMINI_API_KEY
         sync: false
-      - key: ANTHROPIC_MODEL
-        value: claude-sonnet-5-5
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
       - key: ALLOWED_ORIGIN
         value: https://cvify-ai.onrender.com
       - key: AI_DAILY_LIMIT
